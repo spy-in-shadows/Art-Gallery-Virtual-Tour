@@ -1,13 +1,13 @@
 :root {
     --room-depth: 1000px;
-    /* The distance the walls are pushed back */
+    
     --room-height: 80vh;
     --wall-color: #e0e0e0;
-    /* Light, elegant wall color */
+    
     --trim-color: #a0a0a0;
-    /* Darker accent for trim/frames */
+    
     --color-background: #141418;
-    /* Retain dark background outside the room */
+    
     --color-text-primary: #111;
     --font-heading: 'Georgia', serif;
     --font-logo: 'Cinzel', serif;
@@ -19,7 +19,7 @@
     left: 40px;
     z-index: 200;
     pointer-events: none;
-    /* Let clicks pass through */
+    
 }
 
 .logo {
@@ -29,14 +29,10 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--wall-color);
-    /* Light on dark background */
+    
     opacity: 0.8;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
-
-/* -------------------------------------------------------------------------- */
-/* 1. Global Setup and Perspective */
-/* -------------------------------------------------------------------------- */
 
 * {
     box-sizing: border-box;
@@ -48,7 +44,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* Prevent scrolling, as the movement is 3D rotation */
+    
     background-color: var(--color-background);
     color: var(--color-text-primary);
     font-family: Arial, sans-serif;
@@ -61,30 +57,26 @@ body {
     justify-content: center;
     align-items: center;
 
-    /* CRITICAL: Establishes the 3D scene depth */
+    
     perspective: 1500px;
     perspective-origin: center center;
 }
-
-/* -------------------------------------------------------------------------- */
-/* 2. Room Structure (The 3D Box) */
-/* -------------------------------------------------------------------------- */
 
 #room-container {
     width: var(--room-depth);
     height: var(--room-height);
     position: relative;
 
-    /* CRITICAL: Ensures children (walls) are positioned in 3D */
+    
     transform-style: preserve-3d;
 
-    /* Center the origin for rotation */
+    
     transform-origin: center center;
 
-    /* Initial subtle rotation to make the 3D effect immediate */
+    
     transform: rotateY(0deg) translateZ(0);
 
-    /* Note: GSAP will dynamically change the transform property */
+    
 }
 
 .room-wall {
@@ -93,80 +85,66 @@ body {
     height: var(--room-height);
     background-color: #a6011a;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset;
-    /* Soft room lighting effect */
+    
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* Hide the backface to prevent rendering issues on the inside */
+    
     backface-visibility: hidden;
     overflow: hidden;
 }
 
-/* -------------------------------------------------------------------------- */
-/* 3. Positioning the Walls in 3D Space */
-/* -------------------------------------------------------------------------- */
-
-/* Back Wall: Pushed back along Z-axis */
 .back-wall {
     transform: translateZ(calc(var(--room-depth) / -2));
 }
 
-/* Right Wall: Positioned at right edge, rotated to face left (inward) */
 .right-wall {
     transform: translateX(calc(var(--room-depth) / 2)) rotateY(-90deg);
 }
 
-/* Left Wall: Positioned at left edge, rotated to face right (inward) */
 .left-wall {
     transform: translateX(calc(var(--room-depth) / -2)) rotateY(90deg);
 }
-
-/*  */
-
-/* -------------------------------------------------------------------------- */
-/* 4. Artwork and Frame Styling */
-/* -------------------------------------------------------------------------- */
 
 .artwork-frame {
     width: 30%;
     height: 70%;
     max-width: 400px;
 
-    /* Premium Museum Frame Style */
+    
     background-color: #f0f0f0;
-    /* The matte (white cardboard part) */
+    
     padding: 25px;
-    /* Functionally, this is the width of the matte */
+    
 
-    /* The physical frame border */
+    
     border: 15px solid #2b1d0e;
-    /* Dark Oak/Bronze color */
+    
     outline: 2px solid #5c4021;
-    /* Subtle highlight edge for 3D feel */
+    
 
     position: relative;
 
-    /* Complex shadows for realism: */
-    /* 1. Inset shadow: Frame casting shadow onto the matte */
-    /* 2. Outer shadow: Frame casting shadow onto the wall */
+    
+    
+    
     box-shadow:
         inset 0 0 20px rgba(0, 0, 0, 0.5),
-        /* Inner depth */
+        
         0 15px 40px rgba(0, 0, 0, 0.6);
-    /* Wall drop shadow */
+    
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    /* Indicate interaction */
+    
 }
 
-/* Hover effect: Lift off the wall slightly */
 .artwork-frame:hover {
     box-shadow:
         inset 0 0 20px rgba(0, 0, 0, 0.5),
         0 25px 50px rgba(0, 0, 0, 0.7);
-    /* Deeper shadow on lift */
+    
     transform: scale(1.02) translateZ(10px);
 }
 
@@ -175,43 +153,43 @@ body {
     height: 100%;
     object-fit: contain;
     background-color: #000;
-    /* Dark canvas background */
+    
 }
 
 .artwork-info {
     position: absolute;
     bottom: -90px;
-    /* Push it down a bit more to clear the frame shadow */
+    
     left: 50%;
     transform: translateX(-50%);
-    /* Center perfectly */
+    
     width: 80%;
-    /* Don't span the full frame width, look like a label */
+    
 
-    /* Museum Placard Look */
+    
     background: linear-gradient(145deg, #222, #1a1a1a);
-    /* Subtle gradient for material feel */
+    
     border: 1px solid #444;
     border-radius: 2px;
     padding: 10px 15px;
 
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    /* Small shadow to lift it off wall */
+    
 
-    /* Ensure text is legible on dark background */
+    
     color: #e0e0e0;
 }
 
 .info-title {
     font-family: 'Cinzel', serif;
-    /* Use the brand font for potential elegance */
+    
     font-size: 0.85rem;
     line-height: 1.2;
     font-weight: 700;
     margin-bottom: 4px;
     color: #bf9b30;
-    /* Muted Gold for the title */
+    
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -221,28 +199,24 @@ body {
     font-size: 0.75rem;
     font-style: italic;
     color: #aaa;
-    /* Soft grey for artist */
+    
 }
-
-/* -------------------------------------------------------------------------- */
-/* 5. UI Elements (Outside the Room) */
-/* -------------------------------------------------------------------------- */
 
 .room-ui {
     position: absolute;
     top: 30px;
-    /* Align with logo top */
+    
     left: 0;
     width: 100%;
     padding: 0 40px;
-    /* Match logo left spacing */
+    
     display: flex;
     justify-content: center;
-    /* Center the title */
+    
     align-items: center;
     z-index: 100;
     pointer-events: none;
-    /* Allow clicks to pass through empty space */
+    
 }
 
 .room-title {
@@ -252,14 +226,14 @@ body {
     letter-spacing: 0.1em;
     color: var(--wall-color);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    /* Ensure readability */
+    
     pointer-events: auto;
 }
 
 .exit-button {
     position: absolute;
     right: 40px;
-    /* Dock to right */
+    
     padding: 10px 20px;
     background: transparent;
     border: 1px solid var(--wall-color);
@@ -269,14 +243,14 @@ body {
     letter-spacing: 0.1em;
     transition: all 0.3s ease;
     pointer-events: auto;
-    /* Re-enable clicks */
+    
     backdrop-filter: blur(5px);
-    /* distinctiveness */
+    
 }
 
 .exit-button:hover {
     background-color: var(--wall-color);
     color: #a6011a;
-    /* Match the new wall color for text */
+    
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }

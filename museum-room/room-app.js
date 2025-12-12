@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailOverlay = document.getElementById('artwork-detail-overlay');
     const museumContainer = document.getElementById('museum-container');
 
-    // Get category from URL params, default to 'impressionism'
+    
     const urlParams = new URLSearchParams(window.location.search);
     const currentCategory = urlParams.get('category') || 'impressionism';
 
-    // Update the room title based on category
+    
     document.querySelector('.room-title').textContent = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
     document.title = `${currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)} Exhibition - Galerie d'Art`;
 
     let artworksData = {};
 
     const loadArtworkData = () => {
-        // Use the global data object loaded from artworks-data.js
-        // This avoids CORS issues when running locally without a server
+        
+        
         if (window.artworksData) {
             artworksData = window.artworksData;
             populateRoom();
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = frame.querySelector('.info-title');
             const artist = frame.querySelector('.info-artist');
 
-            // HANDLE URLS: Check if absolute (http) or relative assets
+            
             const imageSrc = artwork.image_url.startsWith('http') ? artwork.image_url : `../${artwork.image_url}`;
 
             img.src = imageSrc;
