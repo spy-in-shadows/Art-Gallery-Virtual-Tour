@@ -5,19 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailOverlay = document.getElementById('artwork-detail-overlay');
     const museumContainer = document.getElementById('museum-container');
 
-    
     const urlParams = new URLSearchParams(window.location.search);
     const currentCategory = urlParams.get('category') || 'impressionism';
 
-    
     document.querySelector('.room-title').textContent = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
     document.title = `${currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)} Exhibition - Galerie d'Art`;
 
     let artworksData = {};
 
     const loadArtworkData = () => {
-        
-        
+
         if (window.artworksData) {
             artworksData = window.artworksData;
             populateRoom();
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = frame.querySelector('.info-title');
             const artist = frame.querySelector('.info-artist');
 
-            
             const imageSrc = artwork.image_url.startsWith('http') ? artwork.image_url : `../${artwork.image_url}`;
 
             img.src = imageSrc;
@@ -59,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initMouseRotation = () => {
         const maxRotation = 5;
 
+        
         museumContainer.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
@@ -80,6 +77,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power1.out'
             });
         });
+
+        
+        museumContainer.addEventListener('touchmove', (e) => {
+            
+            e.preventDefault();
+
+            const touch = e.touches[0];
+            const mouseX = touch.clientX / window.innerWidth;
+            const mouseY = touch.clientY / window.innerHeight;
+
+            
+            const rotateY = (mouseX - 0.5) * -3 * maxRotation;
+            const rotateX = (mouseY - 0.5) * 3 * maxRotation;
+
+            gsap.to(roomContainer, {
+                rotationY: rotateY,
+                rotationX: rotateX,
+                duration: 1.0,
+                ease: 'power2.out'
+            });
+        }, { passive: false });
     };
 
     const showArtworkDetail = (artwork) => {

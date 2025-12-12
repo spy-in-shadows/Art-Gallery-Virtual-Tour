@@ -1,13 +1,13 @@
 :root {
     --room-depth: 1000px;
-    
+
     --room-height: 80vh;
     --wall-color: #e0e0e0;
-    
+
     --trim-color: #a0a0a0;
-    
+
     --color-background: #141418;
-    
+
     --color-text-primary: #111;
     --font-heading: 'Georgia', serif;
     --font-logo: 'Cinzel', serif;
@@ -19,7 +19,7 @@
     left: 40px;
     z-index: 200;
     pointer-events: none;
-    
+
 }
 
 .logo {
@@ -29,7 +29,7 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--wall-color);
-    
+
     opacity: 0.8;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
@@ -44,7 +44,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    
+
     background-color: var(--color-background);
     color: var(--color-text-primary);
     font-family: Arial, sans-serif;
@@ -57,7 +57,6 @@ body {
     justify-content: center;
     align-items: center;
 
-    
     perspective: 1500px;
     perspective-origin: center center;
 }
@@ -67,16 +66,12 @@ body {
     height: var(--room-height);
     position: relative;
 
-    
     transform-style: preserve-3d;
 
-    
     transform-origin: center center;
 
-    
     transform: rotateY(0deg) translateZ(0);
 
-    
 }
 
 .room-wall {
@@ -85,12 +80,11 @@ body {
     height: var(--room-height);
     background-color: #a6011a;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    
     backface-visibility: hidden;
     overflow: hidden;
 }
@@ -112,39 +106,31 @@ body {
     height: 70%;
     max-width: 400px;
 
-    
     background-color: #f0f0f0;
-    
-    padding: 25px;
-    
 
-    
+    padding: 25px;
+
     border: 15px solid #2b1d0e;
-    
+
     outline: 2px solid #5c4021;
-    
 
     position: relative;
 
-    
-    
-    
     box-shadow:
         inset 0 0 20px rgba(0, 0, 0, 0.5),
-        
+
         0 15px 40px rgba(0, 0, 0, 0.6);
-    
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    
+
 }
 
 .artwork-frame:hover {
     box-shadow:
         inset 0 0 20px rgba(0, 0, 0, 0.5),
         0 25px 50px rgba(0, 0, 0, 0.7);
-    
+
     transform: scale(1.02) translateZ(10px);
 }
 
@@ -153,43 +139,39 @@ body {
     height: 100%;
     object-fit: contain;
     background-color: #000;
-    
+
 }
 
 .artwork-info {
     position: absolute;
     bottom: -90px;
-    
+
     left: 50%;
     transform: translateX(-50%);
-    
-    width: 80%;
-    
 
-    
+    width: 80%;
+
     background: linear-gradient(145deg, #222, #1a1a1a);
-    
+
     border: 1px solid #444;
     border-radius: 2px;
     padding: 10px 15px;
 
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    
 
-    
     color: #e0e0e0;
 }
 
 .info-title {
     font-family: 'Cinzel', serif;
-    
+
     font-size: 0.85rem;
     line-height: 1.2;
     font-weight: 700;
     margin-bottom: 4px;
     color: #bf9b30;
-    
+
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -199,24 +181,24 @@ body {
     font-size: 0.75rem;
     font-style: italic;
     color: #aaa;
-    
+
 }
 
 .room-ui {
     position: absolute;
     top: 30px;
-    
+
     left: 0;
     width: 100%;
     padding: 0 40px;
-    
+
     display: flex;
     justify-content: center;
-    
+
     align-items: center;
     z-index: 100;
     pointer-events: none;
-    
+
 }
 
 .room-title {
@@ -226,14 +208,14 @@ body {
     letter-spacing: 0.1em;
     color: var(--wall-color);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    
+
     pointer-events: auto;
 }
 
 .exit-button {
     position: absolute;
     right: 40px;
-    
+
     padding: 10px 20px;
     background: transparent;
     border: 1px solid var(--wall-color);
@@ -243,14 +225,84 @@ body {
     letter-spacing: 0.1em;
     transition: all 0.3s ease;
     pointer-events: auto;
-    
+
     backdrop-filter: blur(5px);
-    
 }
 
 .exit-button:hover {
     background-color: var(--wall-color);
     color: #a6011a;
-    
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    :root {
+
+        --room-depth: 80vw;
+        --room-height: 60vh;
+    }
+
+    .room-title {
+        font-size: 1.5rem;
+
+        white-space: nowrap;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+
+    }
+
+    .room-header {
+        top: 20px;
+        left: 20px;
+    }
+
+    .exit-button {
+        right: 20px;
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+
+    .room-wall {
+        width: var(--room-depth);
+    }
+
+    .back-wall {
+        transform: translateZ(calc(var(--room-depth) / -2));
+    }
+
+    .right-wall {
+        transform: translateX(calc(var(--room-depth) / 2)) rotateY(-90deg);
+        width: var(--room-depth);
+
+    }
+
+    .left-wall {
+        transform: translateX(calc(var(--room-depth) / -2)) rotateY(90deg);
+        width: var(--room-depth);
+    }
+
+
+    .artwork-frame {
+        width: 60%;
+        border-width: 8px;
+
+        padding: 15px;
+    }
+
+    .artwork-info {
+        bottom: -70px;
+        width: 90%;
+        padding: 8px;
+    }
+
+    .info-title {
+        font-size: 0.7rem;
+    }
+
+    .info-artist {
+        font-size: 0.6rem;
+    }
 }

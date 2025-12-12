@@ -3,14 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const carousel = document.getElementById('artCarousel');
     const cards = document.querySelectorAll('.art-card');
-
-    
-    
     const isDesktop = window.innerWidth > 768;
-
-    
     let rotationTimeline;
-
     
     if (isDesktop) {
 
@@ -21,12 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const radius = Math.max(1000, calculatedRadius);
         const anglePerCard = 360 / totalCards;
 
-        
-        
-        
         gsap.set(carousel, { z: -radius - 1000 });
 
-        
         console.log(`[3D Setup] Total Cards: ${totalCards}, Radius: ${radius}px`);
 
         cards.forEach((card, index) => {
