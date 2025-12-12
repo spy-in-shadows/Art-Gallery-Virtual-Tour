@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibition - Galerie d'Art</title>
+    <link rel="stylesheet" href="room-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <main id="museum-container">
+
+        <header class="room-header">
+            <h1 class="logo">Galerie d'Art</h1>
+        </header>
+
+        <div id="room-container">
+
+            <section class="room-wall back-wall">
+                <div class="artwork-frame" data-id="IM001">
+                    <img src="" alt="Artwork Title" class="artwork-image">
+                    <div class="artwork-info">
+                        <h3 class="info-title"></h3>
+                        <p class="info-artist"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="room-wall right-wall">
+                <div class="artwork-frame" data-id="IM002">
+                    <img src="" alt="Artwork Title" class="artwork-image">
+                    <div class="artwork-info">
+                        <h3 class="info-title"></h3>
+                        <p class="info-artist"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="room-wall left-wall">
+                <div class="artwork-frame" data-id="IM003">
+                    <img src="" alt="Artwork Title" class="artwork-image">
+                    <div class="artwork-info">
+                        <h3 class="info-title"></h3>
+                        <p class="info-artist"></p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="room-ui">
+            <h1 class="room-title">Impressionism</h1>
+            <button class="exit-button">Return to Main Gallery</button>
+        </div>
+
+    </main>
+
+    <div id="artwork-detail-overlay">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../artworks-data.js"></script>
+    <script src="room-app.js"></script>
+</body>
+
+</html>

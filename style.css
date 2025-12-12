@@ -1,41 +1,379 @@
+/* -------------------------------------------------------------------------- */
+/* 1. Global Setup and Elegance */
+/* -------------------------------------------------------------------------- */
+
+:root {
+    /* Defining CSS variables for easy theme switching later */
+    --color-background: #141418;
+    /* Deep Charcoal/Dark Grey */
+    --color-text-primary: #f0f0f0;
+    /* Off-White/Light Grey */
+    --color-accent: #a0a0a0;
+    /* Subtle Grey Accent */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Helvetica Neue', Helvetica, sans-serif;
+    --radius: 500px;
+    /* Define the radius of the 3D cylinder/circle */
+    --card-count: 4;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+html,
 body {
-  background: #0e0e0e;
-  color: white;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Allow scrolling for the new long-form content */
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    background-color: transparent;
+    /* Changed from var(--color-background) to allow fixed bg to show */
+    transition: background-color 0.5s ease;
+    /* For future Dark/Light mode transition */
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
+/* -------------------------------------------------------------------------- */
+/* 2. Header and Logo */
+/* -------------------------------------------------------------------------- */
+
+.landing-container {
+    position: relative;
+    /* Ensure it creates a stacking context above the fixed background */
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    /* Glass Effect */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center the carousel vertically */
+    padding: 5vh 5vw;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+.gallery-header {
+    position: fixed;
+    /* Fix to top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure it stays above everything */
+    padding: 20px 5vw;
+    /* Consistent spacing */
+
+    /* Glassy Effect */
+    background: rgba(20, 20, 24, 0.3);
+    /* Low opacity dark bg */
+    backdrop-filter: blur(12px);
+    /* Blur the content behind */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle separator */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background 0.3s ease;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, #fff, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.tagline {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-top: 10px;
+    font-weight: 400;
 }
 
-.hero-text {
-  font-size: 3rem;
+
+/* -------------------------------------------------------------------------- */
+/* 3. 3D Carousel Setup (The Crucial Part) */
+/* -------------------------------------------------------------------------- */
+
+/* The carousel-wrapper provides the 3D 'stage'. 
+  perspective: The most important property, defining the depth of the 3D scene.
+*/
+.carousel-wrapper {
+    width: 700px;
+    /* Define the size of the 2D plane */
+    height: 450px;
+
+    /* 3D Properties */
+    perspective: 1500px;
+    /* The "distance" from the viewer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The art-carousel holds all the cards and will be the element we rotate 
+  with GSAP. preserve-3d ensures children are rendered in 3D space.
+*/
+.art-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* We set a default rotation to start the effect slightly angled
+      transform: rotateY(0deg); 
+      Note: GSAP will overwrite this for the perpetual motion.
+    */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Individual Card Styling and Positioning */
+/* -------------------------------------------------------------------------- */
+
+.art-card {
+    position: absolute;
+    width: 360px;
+    height: 540px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Slight glass/dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* Push title to top, hint to bottom */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+    /* For hover effects */
+}
+
+/* Image styling */
+.art-card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.art-card:hover img {
+    opacity: 1;
+    /* Highlight image on hover */
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    color: var(--color-text-primary);
+}
+
+.card-hint {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+/* Hover State - Enhance the elegance */
+.art-card:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+    /* Subtle glowing effect */
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    /* Initial scale up before GSAP takes over */
+    z-index: 10;
+    /* Bring hovered card to front */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. Initial Card Positioning in 3D Space */
+/* -------------------------------------------------------------------------- */
+
+/* Crucial calculation: 
+  The angle for each card is (360 / Total Cards). 
+  With 4 cards, the angle is 90 degrees.
+  
+  The translateZ value is the radius of the circle. This must be large enough
+  to place the cards far enough apart without overlapping.
+*/
+
+/* CSS 3D positioning is now handled dynamically by app.js to support any number of cards */
+/* You will add more of these for 5, 6, 7... cards */
+
+/* -------------------------------------------------------------------------- */
+/* 6. Mobile Simplification (Q12: Desktop-First) */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2rem;
+    }
+
+    .carousel-wrapper {
+        perspective: none;
+        /* Turn off 3D for performance */
+        width: 100%;
+        height: auto;
+    }
+
+    .art-carousel {
+        transform-style: flat;
+        /* Turn off 3D preservation */
+        display: flex;
+        flex-direction: column;
+        /* Stack cards vertically */
+        gap: 30px;
+        margin-top: 20vh;
+    }
+
+    .art-card {
+        position: relative;
+        /* Use normal flow */
+        width: 80vw;
+        height: auto;
+        transform: none !important;
+        /* Override 3D positioning */
+        margin: 0 auto;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. New Narrative Sections Styling */
+/* -------------------------------------------------------------------------- */
+
+.global-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://coolbackgrounds.imgix.net/4lBzkVBmJ0qvFJ90SJHEdV/7645fc49f7f1fb4a8c31a94fc4c97f4d/black-particles-background.png?w=3840&q=60&auto=format,compress') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 1;
+    /* Make fully visible */
+    /* Removed blur for clear view */
+    pointer-events: none;
+}
+
+.content-section {
+    width: 100%;
+    min-height: 80vh;
+    /* Each section takes up significant screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 5vw;
+    /* Glassmorphism effect for sections */
+    background-color: rgba(20, 20, 24, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 10;
+    /* Ensure it sits on top if needed */
+    z-index: 10;
+    /* Ensure it sits on top if needed */
+    box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.5);
+    /* Separate sections visually */
+}
+
+/* Specific background for L'Origine section */
+#about-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://plus.unsplash.com/premium_photo-1669533188185-65e346a34190?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0aXN0aWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Specific background for Philosophy section */
+#philosophy-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.freepik.com/free-photo/hand-paint-watercolour-background_1409-2534.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content-wrapper {
+    max-width: 1000px;
+    text-align: center;
+    opacity: 0;
+    /* Hidden initially for ScrollTrigger */
+    transform: translateY(50px);
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    margin-bottom: 40px;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: linear-gradient(to right, #cfc7c7, #fff, #cfc7c7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-text {
+    font-family: var(--font-heading);
+    /* Georgia helps readabilty for blocks */
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.site-footer {
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #666;
 }

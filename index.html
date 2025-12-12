@@ -1,27 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Art Gallery</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Art - The Digital Museum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
+
 <body>
-  <nav class="nav">
-    <h1 class="logo">Art Gallery</h1>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
 
-  <section class="hero">
-    <h2 class="hero-text">Welcome to the Art Gallery</h2>
-    <p class="hero-subtext">Where creativity meets code.</p>
-  </section>
+    <!-- Ambient Background -->
+    <div class="global-background"></div>
 
-  <script src="script.js"></script>
+    <main class="landing-container">
+
+        <header class="gallery-header">
+            <h1 class="logo">Galerie d'Art</h1>
+            <p class="tagline">Explore the World's Masterpieces</p>
+        </header>
+
+        <div class="carousel-wrapper">
+
+            <div id="artCarousel" class="art-carousel">
+
+                <div class="art-card" data-category="impressionism">
+                    <img src="assets/impressionism.jpg" alt="Impressionism Art">
+                    <h2 class="card-title">Impressionism</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="baroque">
+                    <img src="assets/baroque.jpg" alt="Baroque Art">
+                    <h2 class="card-title">Baroque</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="renaissance">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+                        alt="Renaissance Art">
+                    <h2 class="card-title">Renaissance</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="modern">
+                    <img src="assets/modern.jpg" alt="Modern Art">
+                    <h2 class="card-title">Modern Art</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="surrealism">
+                    <img src="assets/surrealism.jpg" alt="Surrealism Art">
+                    <h2 class="card-title">Surrealism</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="cubism">
+                    <img src="assets/cubism.jpg" alt="Cubism Art">
+                    <h2 class="card-title">Cubism</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="romanticism">
+                    <img src="assets/romanticism.jpg" alt="Romanticism Art">
+                    <h2 class="card-title">Romanticism</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="realism">
+                    <img src="assets/realism.jpg" alt="Realism Art">
+                    <h2 class="card-title">Realism</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="popart">
+                    <img src="assets/popart.jpg" alt="Pop Art">
+                    <h2 class="card-title">Pop Art</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+                <div class="art-card" data-category="ukiyoe">
+                    <img src="assets/ukiyoe.jpg" alt="Ukiyo-e Art">
+                    <h2 class="card-title">Ukiyo-e</h2>
+                    <p class="card-hint">Click to Enter</p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- NEW: Narrative Sections -->
+    <section class="content-section" id="about-section">
+        <div class="content-wrapper">
+            <h2 class="section-title">L'Origine</h2>
+            <p class="section-text">
+                "Galerie d'Art" is not merely a name; it is a homage to the Parisian Salons of the 19th century—the
+                birthplaces of modern art criticism and appreciation. We strive to recreate that sense of wonder and
+                discovery in the digital age.
+            </p>
+            <p class="section-text">
+                Where the physical world is limited by walls and gravity, our digital walls stretch infinitely. Here,
+                the masterpieces of history float in a void of pure creativity, accessible to all who seek beauty.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section" id="philosophy-section">
+        <div class="content-wrapper reverse-layout">
+            <div class="text-block">
+                <h2 class="section-title">La Philosophie</h2>
+                <p class="section-text">
+                    Art is timeless. It transcends the canvas and the century. Our mission is to liberate these works
+                    from the dusty archives and static textbooks.
+                </p>
+                <p class="section-text">
+                    By leveraging cutting-edge 3D technology, we invite you to step *inside* the painting. To see the
+                    brushstrokes of Van Gogh pulse with life, to feel the geometric weight of Cubism. This is art,
+                    re-imagined.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h3 class="footer-logo">Galerie d'Art</h3>
+            <p class="copyright">&copy; 2024 The Digital Museum Project. Curated with passion.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>

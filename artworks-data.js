@@ -1,0 +1,292 @@
+window.artworksData = {
+    "impressionism": [
+        {
+            "id": "IM001",
+            "title": "Impression, Sunrise",
+            "artist": "Claude Monet",
+            "year": 1872,
+            "medium": "Oil on canvas",
+            "description": "A painting credited with inspiring the name of the Impressionist movement. It depicts the port of Le Havre, France.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Monet_-_Impression%2C_Sunrise.jpg"
+        },
+        {
+            "id": "IM002",
+            "title": "Starry Night Over the Rhône",
+            "artist": "Vincent van Gogh",
+            "year": 1888,
+            "medium": "Oil on canvas",
+            "description": "Van Gogh's depiction of the view from the bank of the Rhône, emphasizing the play of light on the water.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Starry_Night_Over_the_Rhone.jpg"
+        },
+        {
+            "id": "IM003",
+            "title": "Water Lilies",
+            "artist": "Claude Monet",
+            "year": 1919,
+            "medium": "Oil on canvas",
+            "description": "One of the approximately 250 oil paintings by French Impressionist Claude Monet. The paintings depict his flower garden at his home in Giverny.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Claude_Monet_-_Water_Lilies_-_1906.jpg"
+        }
+    ],
+    "baroque": [
+        {
+            "id": "BA001",
+            "title": "The Calling of Saint Matthew",
+            "artist": "Caravaggio",
+            "year": 1600,
+            "medium": "Oil on canvas",
+            "description": "A masterpiece of the Baroque era, showing the moment Jesus inspires Matthew to follow him.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg/1200px-Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg"
+        },
+        {
+            "id": "BA002",
+            "title": "The Anatomy Lesson",
+            "artist": "Rembrandt",
+            "year": 1632,
+            "medium": "Oil on canvas",
+            "description": "Dr. Nicolaes Tulp explaining the musculature of the arm to medical professionals.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg"
+        },
+        {
+            "id": "BA003",
+            "title": "The Milkmaid",
+            "artist": "Johannes Vermeer",
+            "year": 1658,
+            "medium": "Oil on canvas",
+            "description": "A domestic kitchen scene that is one of the museum's finest attractions.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png/960px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png"
+        }
+    ],
+    "renaissance": [
+        {
+            "id": "RE001",
+            "title": "Mona Lisa",
+            "artist": "Leonardo da Vinci",
+            "year": 1503,
+            "medium": "Oil on poplar",
+            "description": "A half-length portrait painting by Italian artist Leonardo da Vinci.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+        },
+        {
+            "id": "RE002",
+            "title": "The Birth of Venus",
+            "artist": "Sandro Botticelli",
+            "year": 1486,
+            "medium": "Tempera on canvas",
+            "description": "Depicts the goddess Venus arriving at the shore after her birth, when she had emerged from the sea fully grown.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg"
+        },
+        {
+            "id": "RE003",
+            "title": "The Creation of Adam",
+            "artist": "Michelangelo",
+            "year": 1512,
+            "medium": "Fresco",
+            "description": "A fresco painting which forms part of the Sistine Chapel's ceiling, illustrating the Biblical creation narrative.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg"
+        }
+    ],
+    "modern": [
+        {
+            "id": "MO001",
+            "title": "Composition VII",
+            "artist": "Wassily Kandinsky",
+            "year": 1913,
+            "medium": "Oil on canvas",
+            "description": "Kandinsky's most ambitious work, a complex web of forms and colors.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Vassily_Kandinsky%2C_1913_-_Composition_7.jpg"
+        },
+        {
+            "id": "MO002",
+            "title": "Composition II in Red, Blue, and Yellow",
+            "artist": "Piet Mondrian",
+            "year": 1930,
+            "medium": "Oil on canvas",
+            "description": "Currently in the Kunsthaus Zürich, this painting is a prime example of De Stijl movement.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg"
+        },
+        {
+            "id": "MO003",
+            "title": "Black Square",
+            "artist": "Kazimir Malevich",
+            "year": 1915,
+            "medium": "Oil on linen",
+            "description": "The first version was done in 1915. Malevich made four variants of which the last is thought to have been painted during the late 1920s or early 1930s.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Casimir_Malevich_-_Black_Square.jpg"
+        }
+    ],
+    "surrealism": [
+        {
+            "id": "SU001",
+            "title": "The Persistence of Memory",
+            "artist": "Salvador Dalí",
+            "year": 1931,
+            "medium": "Oil on canvas",
+            "description": "A classic icon of the Surrealist movement, featuring melting clocks in a landscape.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/d/dd/The_Persistence_of_Memory.jpg"
+        },
+        {
+            "id": "SU002",
+            "title": "The Son of Man",
+            "artist": "René Magritte",
+            "year": 1964,
+            "medium": "Oil on canvas",
+            "description": "A self-portrait of Magritte, his face obscured by a hovering green apple.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/e/e5/Magritte_TheSonOfMan.jpg"
+        },
+        {
+            "id": "SU003",
+            "title": "The Elephant Celebes",
+            "artist": "Max Ernst",
+            "year": 1921,
+            "medium": "Oil on canvas",
+            "description": "An early Surrealist work combining mechanical and organic forms.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1d/Celebes.jpg"
+        }
+    ],
+    "cubism": [
+        {
+            "id": "CU001",
+            "title": "Les Demoiselles d'Avignon",
+            "artist": "Pablo Picasso",
+            "year": 1907,
+            "medium": "Oil on canvas",
+            "description": "A large oil painting that portrays five nude female prostitutes in a brothel.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4c/Les_Demoiselles_d%27Avignon.jpg"
+        },
+        {
+            "id": "CU002",
+            "title": "Violin and Candlestick",
+            "artist": "Georges Braque",
+            "year": 1910,
+            "medium": "Oil on canvas",
+            "description": "A classic example of Analytic Cubism, breaking objects into geometric forms.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Georges_Braque%2C_1910%2C_Violin_and_Candlestick%2C_oil_on_canvas%2C_60.96_x_50.17_cm%2C_San_Francisco_Museum_of_Modern_Art.jpg"
+        },
+        {
+            "id": "CU003",
+            "title": "Portrait of Picasso",
+            "artist": "Juan Gris",
+            "year": 1912,
+            "medium": "Oil on canvas",
+            "description": "A homage to the cubist master, rendered in Gris's distinct style.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Juan_Gris_-_Portrait_of_Pablo_Picasso_-_Google_Art_Project.jpg"
+        }
+    ],
+    "romanticism": [
+        {
+            "id": "RO001",
+            "title": "Wanderer above the Sea of Fog",
+            "artist": "Caspar David Friedrich",
+            "year": 1818,
+            "medium": "Oil on canvas",
+            "description": "A masterpiece of Romanticism representing self-reflection and the sublime power of nature.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog_-_Google_Art_Project_-_edited.jpg"
+        },
+        {
+            "id": "RO002",
+            "title": "Liberty Leading the People",
+            "artist": "Eugène Delacroix",
+            "year": 1830,
+            "medium": "Oil on canvas",
+            "description": "Commemorating the July Revolution of 1830 in France.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg"
+        },
+        {
+            "id": "RO003",
+            "title": "The Third of May 1808",
+            "artist": "Francisco Goya",
+            "year": 1814,
+            "medium": "Oil on canvas",
+            "description": "A groundbreaking depiction of the horrors of war.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_in_Google_Earth.jpg"
+        }
+    ],
+    "realism": [
+        {
+            "id": "RE001",
+            "title": "The Gleaners",
+            "artist": "Jean-François Millet",
+            "year": 1857,
+            "medium": "Oil on canvas",
+            "description": "Depicting three peasant women gleaning a field of stray stalks of wheat.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Jean-Fran%C3%A7ois_Millet_-_The_Gleaners_-_Google_Art_Project_2.jpg"
+        },
+        {
+            "id": "RE002",
+            "title": "A Burial At Ornans",
+            "artist": "Gustave Courbet",
+            "year": 1849,
+            "medium": "Oil on canvas",
+            "description": "A major turning point in French art, treating a provincial funeral with monumental scale.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project.jpg"
+        },
+        {
+            "id": "RE003",
+            "title": "Nighthawks",
+            "artist": "Edward Hopper",
+            "year": 1942,
+            "medium": "Oil on canvas",
+            "description": "Portraying people in a downtown diner late at night.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg"
+        }
+    ],
+    "popart": [
+        {
+            "id": "PO001",
+            "title": "M-Maybe",
+            "artist": "Roy Lichtenstein",
+            "year": 1965,
+            "medium": "Magna on canvas",
+            "description": "A comic book-style image of a blonde girl.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/0/05/Roy_Lichtenstein_M-Maybe.jpg"
+        },
+        {
+            "id": "PO002",
+            "title": "Drowning Girl",
+            "artist": "Roy Lichtenstein",
+            "year": 1963,
+            "medium": "Oil and synthetic polymer",
+            "description": "Derived from a comic book panel, a masterpiece of melodramatic pop art.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/d/df/Roy_Lichtenstein_Drowning_Girl.jpg"
+        },
+        {
+            "id": "PO003",
+            "title": "Just what is it that makes today's homes...",
+            "artist": "Richard Hamilton",
+            "year": 1956,
+            "medium": "Collage",
+            "description": "Often cited as the first work of Pop Art.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/9/99/Hamilton-appealing2.jpg"
+        }
+    ],
+    "ukiyoe": [
+        {
+            "id": "UK001",
+            "title": "The Great Wave off Kanagawa",
+            "artist": "Hokusai",
+            "year": 1831,
+            "medium": "Woodblock print",
+            "description": "The most famous work of Japanese art, depicting a massive wave threatening boats.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Great_Wave_off_Kanagawa2.jpg"
+        },
+        {
+            "id": "UK002",
+            "title": "Fine Wind, Clear Morning",
+            "artist": "Hokusai",
+            "year": 1831,
+            "medium": "Woodblock print",
+            "description": "Also known as Red Fuji, showing Mount Fuji in reddish light.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Katsushika_Hokusai_-_Fine_Wind%2C_Clear_Morning_%28Gaif%C5%AB_kaisei%29_-_Google_Art_Project.jpg"
+        },
+        {
+            "id": "UK003",
+            "title": "Plum Park in Kameido",
+            "artist": "Hiroshige",
+            "year": 1857,
+            "medium": "Woodblock print",
+            "description": "A famous print from One Hundred Famous Views of Edo, influencing Van Gogh.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Kameido_Plum_Garden_Hiroshige.jpg"
+        }
+    ]
+};
