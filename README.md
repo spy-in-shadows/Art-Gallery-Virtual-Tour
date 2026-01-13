@@ -6,22 +6,22 @@ Galerie d’art is an immersive virtual art gallery website designed to bring th
 
 ## 🌟 Features
 
-<h3>🖼️ Virtual Gallery Tour</h3>
+<h2>🖼️ Virtual Gallery Tour</h2>
 Smooth navigation through curated halls and art pieces.
 
-<h3>🎧 Immersive Experience</h3>
+<h2>🎧 Immersive Experience</h2>
 Optional background audio, ambient sound, or narrated descriptions.
 
-<h3>📜 Artwork Information Panels</h3>
+<h2>📜 Artwork Information Panels</h2>
 Each piece includes artist info, year, medium, and description.
 
-<h3>💡 Dynamic Lighting & Layout</h3>
+<h2>💡 Dynamic Lighting & Layout</h2>
 Aesthetic gallery-like design with soft gradients, shadows, and spacing.
 
-<h3>📱 Fully Responsive</h3>
+<h2>📱 Fully Responsive</h2>
 Works seamlessly on desktop, tablet, and mobile.
 
-<h3>⚡ Fast & Lightweight</h3>
+<h2>⚡ Fast & Lightweight</h2>
 Minimal dependencies, optimized images, and efficient animations.
 
 ## 🧰 Tech Stack
